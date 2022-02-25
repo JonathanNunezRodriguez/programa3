@@ -1,0 +1,28 @@
+// Partes Modificadas
+Name = Main
+Base = 28
+Del = 10
+Mod = 15
+Add = 20
+
+
+// Partes Nuevas
+Name = Prediccion
+Type = Calculation
+Items = 3
+Rel. Size = S
+Size = 20
+
+Name = Programa3
+Type = Data
+Items = 3
+Rel. Size = M
+Size = 30
+
+
+// Partes Reusadas
+Name = Prompt
+Size = 10
+
+Name = ReadFile
+Size = 10
