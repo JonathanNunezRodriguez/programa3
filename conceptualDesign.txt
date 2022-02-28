@@ -7,22 +7,38 @@ Add = 20
 
 
 // Partes Nuevas
-Name = Prediccion
+Name = Regression
 Type = Calculation
-Items = 3
-Rel. Size = S
-Size = 20
-
-Name = Programa3
-Type = Data
-Items = 3
+Items = 5
 Rel. Size = M
-Size = 30
+Size = 50
 
 
 // Partes Reusadas
 Name = Prompt
-Size = 10
+Size = 15
 
 Name = ReadFile
-Size = 10
+Size = 14
+
+
+
+class main
+    pedir el nombre del archivo a que contenga los datos a leer, manejar caso de exepcion
+    crear un objeto de archivo, leer el archivo y guardar el contenido por lineas
+    procesar el contenido de del archivo para crear un objeto de regresion con los datos procesados
+    hacer los calculos necesarios para crear una mejor prediccion y guardarlos en el objeto de regresion
+    imprimir los resultados
+
+class Regression
+    guardar N, xk, r, r2, b0, b1, yk
+
+    contructor con argumentos de N y xk
+
+    metodo para calucular r y r2
+
+    metodo para calcular b0 y b1
+
+    metodo para calcular la prediccion nueva
+
+    metodo para imprimir resultados
