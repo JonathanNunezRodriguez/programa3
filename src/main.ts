@@ -52,12 +52,26 @@ const main = async () => {
     if (!reader) return;
 
     let xk = 0;
+
     let pairs: Pair[] = [];
+
+    let isEmpty = false;
 
     //.i
 	const processFile: ProcessFileCallback = (line, i) => { //.m
 
         line = line.trim();
+
+        if (isEmpty) return;
+
+        if (line === '') {
+
+            console.log("El archivo introducido esta vacio...");
+            
+            isEmpty = true;
+
+            return;
+        }
 
         //.d=18
 
@@ -77,10 +91,13 @@ const main = async () => {
 
     reader.proccesFile(processFile);
 
-    const regression = new Regression(xk, pairs.map(({ x }) => x), pairs.map(({ y }) => y));
+    if (!isEmpty) {
 
-    regression.printResults();
+        const regression = new Regression(xk, pairs.map(({ x }) => x), pairs.map(({ y }) => y));
 
+        regression.printResults(); 
+    }
+    
     //.d=1
 
     await prompter.getVar('Press enter to exit...');
